@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body>
     <div class="app-layout">
         <header class="app-header">
             <div class="logo-section">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
                 </div>
                 <div class="logo-text">
                     <h1>Whetstone AI</h1>
                 </div>
             </div>
-            <div class="user-section">
-                <span class="welcome-text">Welcome, Spencer!</span>
-                <div class="user-avatar">SB</div>
-                <button id="settings-btn" class="icon-btn" title="Settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-            </div>
+            <button id="settings-btn" class="icon-btn" title="Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
         </header>
 
         <main class="main-content">
@@ -36,8 +37,9 @@
                 <!-- Draft Input Section -->
                 <div class="input-section card">
                     <label for="draft-input" class="section-label">Paste your draft below:</label>
-                    <textarea id="draft-input" placeholder="hey i cant make it to our group meeting tomorrow bc i got another thing i have to do. maybe someone can send me any notes later?"></textarea>
-                    
+                    <textarea id="draft-input"
+                        placeholder="hey i cant make it to our group meeting tomorrow bc i got another thing i have to do. maybe someone can send me any notes later?"></textarea>
+
                     <div class="action-row">
                         <div class="tone-selector">
                             <label for="tone-select">Select Tone:</label>
@@ -88,7 +90,12 @@
                 <!-- Feedback Section -->
                 <div class="feedback-section card">
                     <div class="feedback-header">
-                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
                         <h3>Feedback & Explanation</h3>
                     </div>
                     <ul id="feedback-list" class="feedback-list">
@@ -102,8 +109,10 @@
             <div class="modal-content">
                 <h3>Ollama Settings</h3>
                 <p>Enter your local Ollama URL and Model name.</p>
-                <input type="text" id="api-url-input" placeholder="http://localhost:11434" value="http://localhost:11434" class="settings-input">
-                <input type="text" id="model-name-input" placeholder="llama3" value="llama3" class="settings-input">
+                <input type="text" id="api-url-input" placeholder="http://localhost:11434"
+                    value="http://localhost:11434" class="settings-input">
+                <input type="text" id="model-name-input" placeholder="gemma3:4b" value="gemma3:4b"
+                    class="settings-input">
                 <div class="modal-actions">
                     <button id="save-settings" class="primary-btn">Save</button>
                     <button id="close-modal" class="text-btn">Close</button>
@@ -113,4 +122,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
