@@ -1,3 +1,5 @@
+// Testing to see that the file loads when ran
+alert("new script loaded");
 // Selectors
 const draftInput = document.getElementById('draft-input');
 const toneSelect = document.getElementById('tone-select');
@@ -84,7 +86,7 @@ async function improveDraft() {
 
     const userMessage = { role: 'user', content: text };
     const systemPromptMessage = { role: 'system', content: getSystemPrompt(tone) };
-
+  // Throw the draft into the python engine in VS Code
     try {
         const response = await fetch("http://127.0.0.1:8000/api/improve", {
     method: "POST",
