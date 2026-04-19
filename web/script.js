@@ -86,26 +86,24 @@ async function improveDraft() {
     const systemPromptMessage = { role: 'system', content: getSystemPrompt(tone) };
 
     try {
-        const response = await fetch(apiUrl + '/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                model: modelName,
-                messages: [systemPromptMessage, userMessage],
-                stream: false,
-                format: "json" // Tell Ollama to expect/enforce JSON if supported
-            })
-        });
+        const response = await fetch("http://127.0.0.1:8000/api/improve", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        draft: text,
+        tone: tone
+    })
+});
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+}
 
-        const result = await response.json();
-        const aiText = result.message.content;
+const parsedData = await response.json();
         
         try {
-            const parsedData = extractJSON(aiText);
             
             // Populate UI
             improvedTextDisplay.textContent = parsedData.improved_version;
